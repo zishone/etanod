@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Report Crime
+    </ion-title>
+    <ion-buttons end>
+        <a (click)="closeModal()">
+            Close
+        </a>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <div #map id="map"></div>
+  <form (ngSubmit)="submit()">
+    <ion-item>
+      <ion-label>Type</ion-label>
+      <ion-select [(ngModel)]="report.type" name="type">
+        <ion-option value="Carnapping">Carnapping</ion-option>
+        <ion-option value="Homicide">Homicide</ion-option>
+        <ion-option value="Physical">Physical</ion-option>
+        <ion-option value="Rape">Rape</ion-option>
+        <ion-option value="Roberry">Roberry</ion-option>
+        <ion-option value="Theft">Theft</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-input type="text" [(ngModel)]="report.description" name="description"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Report</button>
+  </form>
+</ion-content>

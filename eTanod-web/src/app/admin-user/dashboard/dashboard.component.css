@@ -1,0 +1,14 @@
+.card {
+	height: 200px;
+	margin: 20px;
+	color:white;
+}
+
+#map {
+	height: 600px;
+	width: 100%;
+}
+
+.list-group-item > .active {
+	background-color: #DF5A46 !important;
+}

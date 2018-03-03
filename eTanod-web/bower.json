@@ -1,0 +1,34 @@
+{
+  "name": "client",
+  "description": "Client for the web app of deinzal",
+  "directory": "src/assets",
+  "authors": [
+    "Stephen Galang Vinuya"
+  ],
+   "dependencies": {
+    "jquery": "latest",
+    "bootstrap": "latest",
+    "parsleyjs": "latest",
+    "toastr":"latest",
+    "jasny-bootstrap":"latest",
+    "datatables":"latest",
+    "sweetalert":"latest",
+    "toastr":"latest",
+    "moment":"latest"
+  },
+  "install" : {
+  	"path":"src/assets",
+  "sources": {
+  	 "bootstrap": "bower_components/bootstrap/dist/**",
+      "jquery": "bower_components/jquery/dist/**",
+      "parsleyjs":"bower_components/parsleyjs/**",
+      "toastr":"bower_components/toastr/**",
+      "datatables":"bower_components/datatables/**",
+      "sweetalert":"bower_components/sweetalert/**",
+      "toastr":"bower_components/toastr/**",
+      "moment":"bower_components/moment/**"
+  }
+  },
+  "license": "Stephen Galang Vinuya",
+  "homepage": "gitlab.com/onecompileman"
+}

@@ -1,0 +1,74 @@
+<app-report-view [report]="selectedReport"></app-report-view>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card" style="background-color:#4373D9; ">
+        <div class="row">
+          <div class="col-sm-4" style="padding-top: 60px;padding-left: 50px;">
+            <i class="glyphicon glyphicon-user" style="font-size: 75px;"></i>
+          </div>
+          <div class="col-sm-8" style="padding-top: 50px;padding-left: 50px;">
+            <h2>12</h2>
+            <h4>Users</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="background-color:#D85125; ">
+        <div class="row">
+          <div class="col-sm-4" style="padding-top: 60px;padding-left: 50px;">
+            <i class="glyphicon glyphicon-list-alt" style="font-size: 75px;"></i>
+          </div>
+          <div class="col-sm-8" style="padding-top: 50px;padding-left: 50px;">
+            <h2>13</h2>
+            <h4>Reports</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="background-color: #0386B1;">
+        <div class="row">
+          <div class="col-sm-4" style="padding-top: 60px;padding-left: 50px;">
+            <i class="glyphicon glyphicon-user" style="font-size: 75px;"></i>
+          </div>
+          <div class="col-sm-8" style="padding-top: 50px;padding-left: 50px;">
+            <h2>2</h2>
+            <h4>Tanods</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-danger">
+        <div class="panel-heading" style="background-color:#DF5A46;color:white; ">
+          <h3 class="panel-title">
+						<i class="glyphicon glyphicon-map-marker"></i>&nbsp; Crime Map
+					</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-9">
+              <div id="map"></div>
+            </div>
+            <div class="col-sm-3" style="padding-right: 0;">
+              <ul class="list-group" style="margin-top: -16px;">
+                <li class="list-group-item" style="text-align: center;">
+                	<b >Crime Types</b>
+                </li>
+                <li [class.active] = "selectedCrime == 'All'" (click) = "showAllCrime()" class="list-group-item">All</li>
+                <li *ngFor="let item of crimes" [class.active] = "selectedCrime == item.name" class="list-group-item" (click) = "filterCrime(item.name)" style="cursor: pointer;">
+                <img [src]="item.src" alt="" style="height: 32px;width: 32px;display: inline;cursor: pointer; ">
+                {{item.name}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

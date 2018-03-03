@@ -1,0 +1,68 @@
+<div class="modal fade" id="report-view-modal">
+	<div class="modal-dialog" style="width: 80%;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Report Information</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="row">
+							<div class="col-sm-12">
+								<h4>
+									<b>Originally Reported By: <a (click)="openUser()">{{report.users[obj.keys(report.users)[0]].name}}</a></b>
+								</h4>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-sm-12">
+								<h4>
+									<b>Type : <img [src]="getCrimeTypeByName(report.type)" alt="" style="height: 32px;width: 32px;display: inline;">{{report.type}}</b>
+								</h4>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-sm-12">
+								<h5>Description: {{report.description}}</h5>
+								<p></p>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-sm-12">
+								<h5>Address: </h5>
+								<p><img src="https://maps.googleapis.com/maps/api/staticmap?center={{report.latitude}},{{report.longitude}}&zoom=14&size=450x300&key=AIzaSyAbzq_fejtIBI2zFkace0-FHgvveB9XT88" alt=""></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<ul class="list-group">
+							<li class="list-group-item" style="text-align: center;">Users with same report</li>
+							<li *ngFor="let key of obj.keys(report.users).slice(1,obj.keys(report.users).length + 1)" class="list-group-item">Name: {{report.users[key].name}} <br>
+							Date Reported: {{report.users[key].timestamp}}
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<i class="glyphicon glyphicon-list-alt"></i>&nbsp; Attachments
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div *ngFor="let key of obj.keys(report.images)" class="col-sm-3">
+						<img [src]="report.images[key]" alt="" class="img-responsive">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			
+			</div>
+		</div>
+	</div>
+</div>

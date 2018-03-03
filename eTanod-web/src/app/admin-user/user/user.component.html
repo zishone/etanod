@@ -1,0 +1,45 @@
+ <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+            <div class="panel-group">
+              <div class="panel panel-primary">
+                <div class="panel-heading">User Information</div>
+                <div class="panel-body">Name: <b>{{user.name}}</b></div>
+                <div class="panel-body">Email: <b>{{user.email}}</b></div>
+                <div class="panel-body">Contact: <b>{{user.contact}}</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover table-striped" style="border-radius:2px;">
+                <thead>
+                  <tr>
+                    <th colspan="4" class="text-center">Reports Made</th>
+                  </tr>
+                  <tr>
+                    <th>Type</th>
+                    <th>Date Reported</th>
+                    <th>Valid</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor = "let report of reports">
+                    <td>{{report.type}}</td>
+                    <td>{{report.users[obj.keys(report.users)].timestamp}}</td>
+                    <td><i class="fa fa-check" aria-hidden="true"></i></td>
+                    <td>{{report.description.substring(0,20)}}..</td>
+                  </tr>
+                  
+                </tbody>
+                
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+

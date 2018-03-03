@@ -1,0 +1,37 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+   <div #map id="map"></div>
+
+
+  <div class="tab">
+    <button class="tablinks" [ngClass]="{ active: isSet(1) }" (click)="setTab(1)">Close By</button>
+    <button class="tablinks" [ngClass]="{ active: isSet(2) }" (click)="setTab(2)">Trending</button>
+  </div>
+
+  <ion-list *ngIf="isSet(1)">
+    <button ion-item *ngFor="let report of reports | async" (click)="goToDetail()">
+      <ion-avatar item-start>
+        <img src="assets/typeicons/{{report.type}}.png">
+      </ion-avatar>
+      <h1>{{ report.description }}</h1>
+      <ion-note item-end>100m</ion-note>
+    </button>
+  </ion-list>
+
+  <ion-list *ngIf="isSet(2)">
+    <button ion-item *ngFor="let report of reports | async" (click)="goToDetail()">
+      <ion-avatar item-start>
+        <img src="assets/typeicons/{{report.type}}.png">
+      </ion-avatar>
+      <h1>{{ report.description }}</h1>
+      <ion-note item-end>100m</ion-note>
+    </button>
+  </ion-list>
+
+  <ion-fab fab-bottom fab-right>
+    <button ion-fab class="fabAddButton" (click)="openModal()"><ion-icon md="md-add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Check
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="text-align: center">
+  <button ion-button round color="danger" (click)="hidden = true">Check Area Crime Severity</button>
+
+  <ion-card>
+    <ion-card-header>
+      Results
+    </ion-card-header>
+
+    <ion-list *ngIf="hidden">
+      <button ion-item>
+        <ion-icon name="md-locate" item-start></ion-icon>
+        Your Location
+      </button>
+
+      <button ion-item>
+        <ion-icon name="md-nuclear" item-start></ion-icon>
+        Crime Rate: <span style="color: red"><strong>Severe</strong></span>
+      </button>
+
+      <button ion-item>
+        <ion-icon name="md-quote" item-start></ion-icon>
+        Advice: Stay Out of Area
+      </button>
+    </ion-list>
+  </ion-card>
+</ion-content>

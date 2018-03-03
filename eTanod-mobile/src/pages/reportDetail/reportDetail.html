@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Report Detail
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="tab">
+    <button class="tablinks" [ngClass]="{ active: isSet(1) }" (click)="setTab(1)">Details</button>
+    <button class="tablinks" [ngClass]="{ active: isSet(2) }" (click)="setTab(2)">Chat</button>
+  </div>
+
+</ion-content>

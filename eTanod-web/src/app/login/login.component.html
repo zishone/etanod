@@ -1,0 +1,66 @@
+ <nav class="navbar navbar-default" role="navigation">
+        <div style="width:100%; height:65px; border-radius:0 !important;">
+         <!--  Logo Here -->
+         <img class="navbar-brand pull-left" src="http://i.imgur.com/mYAVMWY.png" alt="eTanod Logo" style="width:150px;height:auto;">
+
+         <a class="pull-right" style="margin-top:25px; text-decoration:none" data-toggle="modal" href="#modal-id">
+          <button type="button" class="btn btn-info btn-lg" style="margin-right:15px;">Login</button>
+        </a>
+      </div>
+    </nav>
+	<div class="container-fluid" style="background-repeat: no-repeat;
+        background-image: url('http://i.imgur.com/tKwu2G8.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        overflow-y:hidden;height: 100vh;margin-top: -20px;">
+    <div class="row" style="display:flex; flex-direction:row; align-items:center; justify-content:center; height:50%;   ">
+      <!--  Description -->
+      <span class="text-center" style="color: white; font-size:80px">Real app with real users</span>
+    </div>
+
+    <div class="modal fade" style="background-color: rgba(6, 10, 14, 0.8); display: none;" id="modal-id">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Welcome</h4>
+          </div>
+          <div class="modal-body">
+
+            <form id="login-form">
+
+              <div class="form-group">
+              <div class="alert alert-danger" [hidden]="!wrong">
+              	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              	<strong>Error!</strong> Wrong username or password!
+              </div>
+      
+              
+                  <input type="text" name="username" class="form-control" placeholder="Username" required="" data-parsley-required>
+            
+
+                <br>
+              
+                  <input type="password" name="password" class="form-control" placeholder="Password" required="" data-parsley-required>
+         
+
+              </div>
+
+            
+              <span style="color: #59BDF2">
+                <a href="#" class="forgot-password pull-right need-help">Forgot the password?</a>
+              </span> <span class="clearfix"></span>
+              <br>
+
+              <a (click) = "login()" class="btn btn-primary">Log in</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
